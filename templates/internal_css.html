@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title>Internal CSS</title>
+    <style>
+        h1 {
+            color: rgb(89, 0, 255);
+            font-family: 'Times New Roman';
+            font-size: 300%;
+            background-color: azure;
+        }
+        p{
+            color: black;
+            font-family: 'Courier';
+            border: 2px solid black;
+            padding: 30px;
+            margin: 50px;
+        }
+        body{
+            background-color: rgb(240, 240, 21);
+        }
+        a:link{
+            color:rgb(0, 255, 85);
+            background-color: blueviolet;
+            text-decoration: none;
+        }
+        a:visited{
+            color:rgb(0, 255, 85);
+            background-color: rgb(226, 43, 43);
+            text-decoration: none;
+        }
+        a:hover{
+            color:rgb(0, 255, 85);
+            background-color: rgb(220, 182, 255);
+            text-decoration: none;
+        }
+        a:active{
+            color:rgb(255, 0, 0);
+            background-color: rgb(43, 226, 104);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Heading One</h1>
+    <p>This is a paragraph</p>
+    <a href="/" target="_blank">home</a>
+    <image src="{{url_for('static',path='/images/sonic-running.gif')}}" style="width: 300px;height: 300px;"></image>
+    <ul style="list-style-type: disc;">
+        <li>Sonic 1</li>
+        <li>Sonic 2</li>
+        <li>Sonic 3</li>
+    </ul>
+    <ol>
+        <li>Cofee</li>
+        <li>Tea</li>
+    </ol>
+    <dl>
+        <dt>Cofee</dt>
+        <dd>Made with rosted cofee beans</dd>
+        <dt>Tea</dt>
+        <dd>made with sun dried tea leaves</dd>
+    </dl>
+</body>

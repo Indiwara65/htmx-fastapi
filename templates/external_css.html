@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>External CSS</title>
+    <link rel='stylesheet' href="{{url_for('static',path='css/cssOne.css')}}">
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a para</p>
+    <h1>Links</h1>
+    <a href="/" target="_self">same window/tab</a><br>
+    <a href="/" target="_blank">new window/tab</a><br>
+    <a href="/" target="_parent">same frame</a><br>
+    <a href="/" target="_top">new frmae</a><br>
+    <a href="/" target="_self">
+        <image src="{{url_for('static',path='/images/car.jpg')}}" width="128px" height="72px"></image>
+    <br>image link</a><br>
+    <a href="mailto:someone@example.com" title="send an email">Email</a><br>
+</body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World</title>
+    </head>
+<body>
+    <h1>Larget Heading</h1>
+    <p>This is the first paragraph.</p>
+    <h2>Is this the second largest heading.</h2>
+    <h1>This is the largest heading again</h1>
+    <h6>This heading h6</h6>
+    <p>This is another paragraph</p>
+    <a href="https://www.w3schools.com">This is a link with a title</a><br>
+    <a href="{{url_for('static',path='images/car.jpg')}}">car image link</a>
+    <br>
+    <img src="{{url_for('static', path='images/car.jpg')}}" title="Subaru WRX 2001" alt="alternative text" width="800" height="450">
+    <h1 style="color: aqua;">This is a aqua color heading</h1>
+    <p style="color:blue;">This is a blue para</p>
+    <p>This is a para 
+        with multiple lines 
+        although you can't see the line breaks
+        hello world by the way this is the 3rd line
+        but you can't see it.
+    </p>
+    <hr color="red">
+    <pre style="font-size: 15px;">This is a para 
+with multiple lines 
+you can see the line breaks
+hello world by the way this is the 3rd line
+and this is line 4         and here is a large space.
+    </pre>
+    <hr>
+    <h2 style="color: black; font-size: 80px; background-color: beige;">Style</h2>
+    <p style="font-family: Verdana; color:rgb(11, 163, 112); font-size: 30px;">This is Verdana font</p>
+    <p style="font-family: sans-serif; text-align: center; color:rgb(248, 177, 22); font-size: 25px;">This is sans-serif font and center alligned</p>
+    <p style="font-family: Arial; text-align: right; color:rgb(119, 10, 243); font-size: 20px;">This is Arial font and right alligned</p>
+    <p><b>Bolt Text</b><br>
+    <i>Ittalic text</i>
+    <em>Emphasized text</em>
+    <mark>Marked text</mark>
+    <small>Small text</small>
+    <del>Deleted text</del>
+    <ins>Inserted text</ins>
+    <sub>Subscript text</sub>
+    <sup>Superscript text</sup>
+    <b><i>Ittalic and Bold</i></b><br>
+    </p>
+    <code style="background-color: rgb(142, 240, 171);">
+import numpy as np<br>
+s = "this is some python code"<br>
+x = np.array([1,2,3])<br>
+y = np.array([3,4,5])<br>
+print(f"x+y={x+y}")<br>
+    </code>
+<!-- This is a comment and will not be displayed in the browser -->
+    <p style="background-color: rgb(1, 190, 248);">This is a para where the background color is light blue<br>
+    This is the second line.<br>
+    This kind of formatting is called inline CSS</p>
+</body>
+</html>
