@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+    <title>HTMX</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Triggers</h2>
+
+    <hr>
+    <h3>Trigger 1 - Click</h3>
+    <button hx-get="/trigger-1" hx-target="#result-1" hx-trigger="click">Click</button>
+    <div id="result-1">
+        <!-- Content Here -->
+    </div>
+    
+    <hr>
+    <h3>Trigger 2 - Change</h3>
+    <p>Triggers when the user inputs some value and leaves</p>
+    <input hx-get="/trigger-2" hx-target="#result-2" hx-trigger="change">
+    <div id="result-2">
+        <!-- Content Here -->
+    </div>
+    
+    <hr>
+    <h3>Trigger 3 - KeyUp</h3>
+    <p>Triggers when the user inputs some value</p>
+    <input hx-get="/trigger-3" hx-target="#result-3" hx-trigger="keyup">
+    <div id="result-3">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h3>Trigger 4 - KeyDown</h3>
+    <p>Triggers when the user inputs just press a key (no value in the input field)</p>
+    <input hx-get="/trigger-4" hx-target="#result-4" hx-trigger="keydown">
+    <div id="result-4">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 5 - MouseOver</h4>
+    <p hx-get="/trigger-5" hx-target="#result-5" hx-trigger="mouseover">Trigger when mouse moves over</pp>
+    <div id="result-5">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 6 - Pooling</h4>
+    <p>Send a triggers periodically</p>
+    <div id="result-6"hx-get="/trigger-6" hx-target="#result-6" hx-trigger="every 10s">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 7 - Load</h4>
+    <p>Send a triggers evrytime the page is reloded</p>
+    <div id="result-7"hx-get="/trigger-7" hx-target="#result-7" hx-trigger="load">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 8 - Reveal</h4>
+    <p>Send a triggers when revealed</p>
+    <div id="result-8"hx-get="/trigger-8" hx-target="#result-8" hx-trigger="revealed">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 9 - Trigger Modifiers</h4>
+    <p>delay and change triggers added to keyup<br>
+    Only triggers when the value in the input field changes with a delay.</p>
+    <input hx-get="/trigger-3" hx-target="#result-9" hx-trigger="keyup delay:300ms change">
+    <div id="result-9">
+        <!-- Content Here -->
+    </div>
+
+    <hr>
+    <h4>Trigger 10 - Submit</h4>
+    <p>Triggers when a form is submitted</p>
+    <form hx-get="/trigger-10" hx-target="#result-11" hx-trigger="submit">
+        <label for="username">Username</label><br>
+        <input name="username" id="username" type="text"><br>
+        <label for="password">Password</label><br>
+        <input name="password" id="password" type="password"><br><br>
+        <input type="submit">
+    </form>
+    <div id="result-11">
+        <!-- Content Here -->
+    </div>
+
+    <br>
+    <hr><br><hr>
+    <h2>HTML Swaps</h2>
+    <h3>Inner HTML</h3>
+    <p>Entire HTML inside the target is replaced</p>
+    <button hx-get="/swap-1" hx-target="#swap-1" hx-trigger="click" hx-swap="innerHTML">Click Me!</button>
+    <div id="swap-1">
+        <p>Content before swap</p>
+        <!--content here-->
+    </div>
+    
+    <hr>
+    <h3>Outer HTML</h3>
+    <p>Entire element is replaced</p>
+    <button hx-get="/swap-2" hx-target="#swap-2" hx-trigger="click" hx-swap="outerHTML">Click Me!</button><br><br>
+    <input id="swap-2" value="Will be replaced">
+
+    <hr>
+    <h3>Before Begin</h3>
+    <p>HTML is added before the target element</p>
+    <button hx-get="/swap-3" hx-target="#swap-3" hx-trigger="click" hx-swap="beforebegin">Click Me!</button>
+    <p id="swap-3">New html will be added before this paragraph.</p>
+
+    <hr>
+    <h3>After Begin</h3>
+    <p>HTML is added just after the element starts</p>
+    <button hx-get="/swap-3" hx-target="#swap-4" hx-trigger="click" hx-swap="beforebegin">Click Me!</button>
+    <p id="swap-4">New html will be added inside this this paragraph before this statement.</p>
+
+    <hr>
+    <h3>Before End</h3>
+    <p>HTML is added just before the end of the element</p>
+    <button hx-get="/swap-3" hx-target="#swap-4-" hx-trigger="click" hx-swap="beforeend">Click Me!</button>
+    <p id="swap-4-">New html will be added inside this this paragraph after this statement.</p>
+
+    <hr>
+    <h3>After End</h3>
+    <p>HTML is added just after the target element</p>
+    <button hx-get="/swap-3" hx-target="#swap-5" hx-trigger="click" hx-swap="afterend">Click Me!</button>
+    <p id="swap-5">New html will be added after this this paragraph element.</p>
+
+    <hr>
+    <h3>Delete</h3>
+    <p>The entire target element will be deleted.</p>
+    <button hx-get="/swap-3" hx-target="#swap-6" hx-trigger="click" hx-swap="delete">Click Me!</button>
+    <p id="swap-6">This paragraph element will be deleted.</p>
+
+    <br>
+    <hr><br>
+    <hr>
+    <h3>Request Indicators</h3>
+    <button hx-get="/indicator-1" hx-target="#indicator-1" hx-indicator="#spinner" hx-trigger="click" hx-swap="innerHTML">
+    Load Data
+    </button>
+    <img id="spinner" src="{{url_for('static',path='images/loading__.gif')}}" class="htmx-indicator" style="width: 25px; height: auto;">
+    <div id="indicator-1"></div>
+</body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>Jinga</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jinga Templating</h1>
+    <hr>
+    <h2>Variables</h2>
+    <p>This is variable one : {{variableOne}}<br>
+    This variable is a nested variable : {{variableTwo.One}}<br>
+    this variable is a double nested variable : {{variableThree.One.Two}}
+    <hr>
+    <h2>Filters</h2>
+    <p>Lower filter applied on variable one : {{variableOne|lower}}<br>
+    &#960-22/7 rounded to 2 decimal places by the round filter : {{PI|round(2)}}<br>
+    Two filters applied : {{[1.12324,2.4545,3.344334]|max|round(2)}}</p>
+    <hr>
+    <h2>Tests</h2>
+    <p><b>Test one check if a number is even</b></p>
+    {% if numberOne is even %}
+        <p>{{numberOne}} is even</p>
+    {% else %}
+        <p>{{numberOne}} is odd</p>
+    {% endif %}
+    <p><b>Test two check if a string lowercase</b></p>
+    {% if variableOne is lower %}
+        <p>{{variableOne}} is lowercase in its entirety</p>
+    {% else %}
+        <p>{{variableOne}} has uppercase letters</p>
+    {% endif %}
+    <p><b>Test three check if a python dict is iterable</b></p>
+    {% if variableTwo is not iterable%}
+        <p>{{variableTwo}} is not iterable</p>
+    {% else %}
+        <p>{{variableTwo}} is iterable</p>
+    {% endif %}
+    <p><b>Check if a variable which does not exist is none</b></p>
+    {% if numberNumber is none%}
+        <p>Jinga do give a non existent variable as none</p>
+    {% else %}
+        <p>Jinga does not return non existant variable as none</p>
+    {% endif %}
+    <hr>
+    {# This is a jinga comment#}
+    <h2>Escaping</h2>
+    <p>Tricking the template rendering engine not to render anything inside this block.</p>
+    {% raw %}
+        {% if variableOne is lower %}
+            <p>{{variableOne is lowercase}}</p>
+        {% else %}
+            <p>{{variableOne}} is not lowercase</p>
+        {% endif %}
+     {% endraw %}
+     <p>Above lines are not redereded as they are inside a {% raw %} {% endraw %} block</p>
+     <hr>
+</body>

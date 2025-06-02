@@ -1,0 +1,38 @@
+<!DOCTYPE html>>
+<head>
+    <title>Forms</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h>Form</h>
+    <p>Forms are used to collect data in HTML</p><br>
+    <form>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Obapan Gona"><br>
+        <input type="checkbox"><br>
+        <input type="radio"><br>
+        <input type="checkbox"><br>
+        <input type="button"><br>
+        <input type="submit"><br>
+    </form><br><br>
+    <form action="/login/login" method="post" target="_blank">
+        <label for="uname">Email:</label><br>
+        <input type="email" name="uname" id="uname" value="gemba@gmail.com"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="uname"><br><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form><br><br>
+    <form>
+        <label>File</label>
+        <input type="file">
+    </form>
+</body>
