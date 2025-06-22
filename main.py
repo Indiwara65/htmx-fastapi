@@ -104,6 +104,7 @@ async def trigger8(request:Request):
 
 @app.get("/trigger-10", response_class=HTMLResponse)
 async def trigger10(request:Request):
+    print(request.body)
     return f"<p>Hello Login Triggered</p>" 
 
 @app.get("/swap-1", response_class=HTMLResponse)
@@ -122,3 +123,4 @@ async def swap2(request:Request):
 async def swap2(request:Request):
     time.sleep(2)
     return f"<p>Loaded</p>"
+
